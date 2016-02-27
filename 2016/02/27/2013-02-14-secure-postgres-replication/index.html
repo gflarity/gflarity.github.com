@@ -3,18 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>归档: 2016/2 | Hexo</title>
+    <title>Secure Replication With Postgres 9.1 | Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2016/02/index.html">
+        <meta name="keywords" content="" />
+    
+    <meta name="description" content="Having been the MySQL DBA-By-Default (DBA-B-D) in another life, I’ve must to admit to being much happier with postgres despite what I consider to be documentation holes. As a DBA-B-D (aka DevOps, aka">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Secure Replication With Postgres 9.1">
+<meta property="og:url" content="http://yoursite.com/2016/02/27/2013-02-14-secure-postgres-replication/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description">
+<meta property="og:description" content="Having been the MySQL DBA-By-Default (DBA-B-D) in another life, I’ve must to admit to being much happier with postgres despite what I consider to be documentation holes. As a DBA-B-D (aka DevOps, aka">
+<meta property="og:updated_time" content="2016-02-27T20:57:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Secure Replication With Postgres 9.1">
+<meta name="twitter:description" content="Having been the MySQL DBA-By-Default (DBA-B-D) in another life, I’ve must to admit to being much happier with postgres despite what I consider to be documentation holes. As a DBA-B-D (aka DevOps, aka">
     
 
     
@@ -88,305 +91,153 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>归档: 2016/2
+    <a class="page-title-link" href="/categories/blog/">blog</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-2013-02-14-secure-postgres-replication" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/02/27/2016-02-27-messing-around-with-cassandra-docker-swarm/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-url="http://yoursite.com/2016/02/27/2016-02-27-messing-around-with-cassandra-docker-swarm/">0</span>
-    
-</span>
-
-    
-</a>
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/blog/">blog</a>
-            </p>
-            <p class="date"><time datetime="2016-02-27T20:57:33.000Z" itemprop="datePublished">2016-02-27</time></p>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2016/02/27/2016-02-27-messing-around-with-cassandra-docker-swarm/">Messing around with Cassandra and Docker Swarm</a>
+        Secure Replication With Postgres 9.1
         </h1>
     
 
-        <p class="article-excerpt">
-            Hi, this is a test. Why is only the title working?
-My test here1Hello world
-
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
+            </header>
         
-        <a href="/2016/02/27/2013-02-14-secure-postgres-replication/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-url="http://yoursite.com/2016/02/27/2013-02-14-secure-postgres-replication/">0</span>
-    
-</span>
-
-    
+        <div class="article-subtitle">
+            <a href="/2016/02/27/2013-02-14-secure-postgres-replication/" class="article-date">
+    <time datetime="2016-02-27T20:57:33.000Z" itemprop="datePublished">2016-02-27</time>
 </a>
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/blog/">blog</a>
-            </p>
-            <p class="date"><time datetime="2016-02-27T20:57:33.000Z" itemprop="datePublished">2016-02-27</time></p>
+            
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/02/27/2013-02-14-secure-postgres-replication/">Secure Replication With Postgres 9.1</a>
-        </h1>
-    
+        <div class="article-entry" itemprop="articleBody">
+            <p>Having been the MySQL DBA-By-Default (DBA-B-D) in another life, I’ve must to admit to being much happier with postgres despite what I consider to be documentation holes. As a DBA-B-D (aka DevOps, aka Co-Founder), I find postgres lacking concise up-to-date documentation for getting specific tasks done quickly,  or howtos. Replication is one such task. I had to merge bits and pieces from a number of sources, including mailing list posts,  together in order to get what I wanted. I’m not complaining though, rather this my contribution to improving this situation. </p>
+<h1 id="Why-Secure-Replication"><a href="#Why-Secure-Replication" class="headerlink" title="Why Secure Replication"></a>Why Secure Replication</h1><p>The Cloud, aka outsourced VPS hosting with an API. Most of the documentation seems to expect you to be running this in our private secure network partitioned data center. </p>
+<h1 id="High-Level-Overview"><a href="#High-Level-Overview" class="headerlink" title="High Level Overview"></a>High Level Overview</h1><p>TODO</p>
+<h1 id="Get-Yourself-A-Cert"><a href="#Get-Yourself-A-Cert" class="headerlink" title="Get Yourself A Cert"></a>Get Yourself A Cert</h1><p>You’ll probably want to generate one yourself. THere’s not much point paying for a new one since you can easily distribute your own CA cert. Google it, there’s lot of info out there.</p>
+<h1 id="On-The-Master"><a href="#On-The-Master" class="headerlink" title="On The Master"></a>On The Master</h1><p>Update the postgres.conf on your master to enable WAL support for replication:</p>
+<p><br><pre><br>wal_level = hot_standby<br>max_wal_senders = 3<br></pre><br></p>
 
-        <p class="article-excerpt">
-            Having been the MySQL DBA-By-Default (DBA-B-D) in another life, I’ve must to admit to being much happier with postgres despite what I consider to be documentation holes. As a DBA-B-D (aka DevOps, aka 
-        </p>
+<p>Add the following to authorize the client to replicate against the db. Note that we’re only authorizing an SSL connection from replication user on all databases from $SLAVE_IP with password based authentication (md5).</p>
+<p><br><pre><br>hostssl replication all $SLAVE_IP/32    md5<br></pre><br></p>
+
+<p>Note: You’ll need to restart your postgres server for the wal related setting to take affect now.</p>
+<p>The Postgres data dir for Ubuntu 12-04 is in /var/lib/postgresql/9.1/main</p>
+<p>You’ll need an SSL key and cert and root cert (CA). You can generate your own CA and self signed cert if you want as well. To do so see the Keys and Certs section of<br><a href="http://gflarity.github.com/2012/07/25/client-ssl-auth/" target="_blank" rel="external">this article</a>.</p>
+<h1 id="On-The-Slave"><a href="#On-The-Slave" class="headerlink" title="On The Slave"></a>On The Slave</h1><p>If postgres is running on the SLAVE, bring it down. You’re going to wipe out whatever is there and create a backup from the master. </p>
+<p>Switch to postgres user from here on. </p>
+<p>First, delete the the contents of $PG_DATA ( /var/lib/postgresql/9.1/main/ on Ubuntu/Debian ).</p>
+<p><br><pre><br>sudo su - postgres<br>rm -rf /var/lib/postgresql/9.1/main/<br></pre><br></p>
+
+
+<p>Now use pg_basebackup to create the backup we’re going to start replicaiton from. You’ll be prompted for the postgres user password ($PG_PASS).</p>
+<p><br><pre><br>pg_basebackup -D /var/lib/postgresql/9.1/main/ -x -h $MASTER_IP<br></pre><br></p>
+
+
+<p>As <em>root</em>, create links to the certs, including your CA/root cert.</p>
+<p><br><pre><br>sudo su<br>cd /var/lib/postgresql/9.1/main/<br>ln -s /etc/ssl/certs/yourcert.crt server.crt<br>ln -s /etc/ssl/private/yourkey.key server.key<br>ln -s /etc/ssl/certs/root.crt root.cert<br></pre><br></p>
+
+
+<p>Once complete, create a file called recovery.conf with the following contents inside your postgres data dir on the slave. </p>
+<p><br><pre><br>standby_mode = ‘on’<br># ‘touch’ the file below to initiate fail over ( break replication, become read-write )<br>trigger_file = ‘$PG_DATA/failover’<br>primary_conninfo=’host=$MASTER_IP port=5432 sslmode=verify-ca password=$PG_PASS’<br></pre><br></p>
+
+<p>Add the followng to the postgres.conf file:</p>
+<p><br><pre><br>hot_standby = on<br></pre><br></p>
+
+<p>Link to the root cert used to verify the master:</p>
+<p><br><pre><br>ln -s /etc/ssl/<br></pre><br></p>
+
+
+<p>Start postgres and tail the log, you should see replication starting. On Ubuntu:</p>
+<p><br><pre><br>service postgres start<br>tail -f /var/log/postgresql/postgresql-9.1-main.log<br></pre><br></p>
+
+
+
+
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2016/02/27/2013-02-14-secure-postgres-replication/" data-id="cil5m9oa600037wufoftu8k9i" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
-    
-        </div>
-    
 
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/02/27/2012-12-28-ssh-agent-forwarding/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-url="http://yoursite.com/2016/02/27/2012-12-28-ssh-agent-forwarding/">0</span>
-    
-</span>
-
-    
-</a>
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/blog/">blog</a>
-            </p>
-            <p class="date"><time datetime="2016-02-27T20:57:33.000Z" itemprop="datePublished">2016-02-27</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/02/27/2012-12-28-ssh-agent-forwarding/">SSH Agent Forwarding</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            I was having some issues getting my SSH Agent to forward. Turns out my understanding was completely inadequate. Here’s a quick run through for anyone else who might benefit.
-High Level ConceptSay you 
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
 
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/02/27/2012-07-25-client-ssl-auth/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-url="http://yoursite.com/2016/02/27/2012-07-25-client-ssl-auth/">0</span>
-    
-</span>
-
-    
-</a>
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/blog/">blog</a>
-            </p>
-            <p class="date"><time datetime="2016-02-27T20:57:33.000Z" itemprop="datePublished">2016-02-27</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/02/27/2012-07-25-client-ssl-auth/">Client SSL Auth</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            The HTTPS system allows you to communicate securely with a server and trust it’s idenity. This is how it’s generally used. However it’s also possible for the server to trust the identity of the client
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/02/27/2012-04-05-finding-node-modules/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-url="http://yoursite.com/2016/02/27/2012-04-05-finding-node-modules/">0</span>
-    
-</span>
-
-    
-</a>
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/blog/">blog</a>
-            </p>
-            <p class="date"><time datetime="2016-02-27T20:57:33.000Z" itemprop="datePublished">2016-02-27</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/02/27/2012-04-05-finding-node-modules/">Finding Quality Node Modules</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Last night we had a great second Node.js Toronto meetup. There was some frustration directed towards the problem knowing which modules are of high quality. This is an acknowledged pain point in the no
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/02/27/2012-03-18-disqus-on-github/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-url="http://yoursite.com/2016/02/27/2012-03-18-disqus-on-github/">0</span>
-    
-</span>
-
-    
-</a>
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/blog/">blog</a>
-            </p>
-            <p class="date"><time datetime="2016-02-27T20:57:33.000Z" itemprop="datePublished">2016-02-27</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/02/27/2012-03-18-disqus-on-github/">Disqus On Github</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            I had some trouble getting disqus to work with my github page. Turns out I needed to add the following to my disqus javascript:
-var disqus_url = &#39;http://gflarity.github.com&#39;;
-Now it all works 
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
+    </section>
 
                         </div>
                     </section>
@@ -446,6 +297,29 @@ Now it all works
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/02/27/2016-02-27-messing-around-with-cassandra-docker-swarm/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            Messing around with Cassandra and Docker Swarm
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/02/27/2012-12-28-ssh-agent-forwarding/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">SSH Agent Forwarding</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -624,11 +498,13 @@ Now it all works
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'http://yoursite.com/2016/02/27/2013-02-14-secure-postgres-replication/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
